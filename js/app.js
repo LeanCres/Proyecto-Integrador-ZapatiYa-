@@ -1,18 +1,21 @@
-const cards = document.getElementById("cards");
 const items = document.getElementById("items");
 const footer = document.getElementById("footer");
 const templateCard = document.getElementById("template-card").content;
 const templateFooter = document.getElementById("template-footer").content;
 const templateCarrito = document.getElementById("template-carrito").content;
 const fragment = document.createDocumentFragment();
+const btnInput = document.querySelector(".btnInput");
+
 let carrito = {};
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
+  /*btnInput.addEventListener("click", searchZapatilla);*/
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     pintarCarrito();
   }
+  
 });
 
 cards.addEventListener("click", (e) => {
@@ -100,7 +103,7 @@ const pintarCarrito = () => {
 const pintarFooter = () => {
   footer.innerHTML = "";
   if (Object.keys(carrito).length === 0) {
-    footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Añada Productos!</th>`;
+    footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Añada characters!</th>`;
     return;
   }
   const nCantidad = Object.values(carrito).reduce(
@@ -124,6 +127,11 @@ const pintarFooter = () => {
   btnVaciar.addEventListener("click", () => {
     carrito = {};
     pintarCarrito();
+});
+  const btnComprar = document.getElementById("comprar-carrito");
+  btnComprar.addEventListener("click", () => {
+    carrito = {};
+  pintarCarrito();
   });
 };
 
@@ -146,3 +154,44 @@ const btnAccion = (e) => {
   }
   e.stopPropagation();
 };
+
+/* const templateCard = document.getElementById("template-card").content; */
+const zapaCardTemplate = document.getElementById("template-card")
+conzapa = document.getElementById("cards")
+const searchInput = document.querySelector("[data-search]")
+
+let zapas = []
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase()
+  zapas.forEach(zapa => {
+    const isVisible =
+      zapa.modelo.toLowerCase().includes(value) ||
+      zapa.precio.toLowerCase().includes(value)
+    zapa.element.classList.toggle("hide", !isVisible)
+  })
+})
+
+fetch("js/api.json")
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(zapa => {
+      const card = zapaCardTemplate.content.cloneNode(true).children[0]
+      console.log(zapa)
+    })
+    zapas = data.map(zapa => {
+      const card = zapaCardTemplate.content.cloneNode(true).children[0]
+      const title = card.querySelector("h4")
+      const header = card.querySelector("h5")
+      const image = card.querySelector("img")
+      const body = card.querySelector("p")
+
+      image.setAttribute('src', zapa.img)
+      title.textContent = zapa.marca
+      header.textContent = zapa.modelo
+      body.textContent = zapa.precio
+      zapaCardContainer.append(card)
+      return { modelo: zapa.modelo, precio: zapa.precio, img: zapa.img, element: card }
+      
+    })
+  })
