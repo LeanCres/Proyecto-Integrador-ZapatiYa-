@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "marca": "Nike",
+    "modelo": "Air",
+    "color": "Negro",
+    "precio": "55000",
+    "img": "./assets/img/shoes/air.png"
+  },
+  {
+    "id": "2",
+    "marca": "Nike",
+    "modelo": "Blazer",
+    "color": "Blanco",
+    "precio": "47000",
+    "img": "./assets/img/shoes/blazer.png"
+  },
+  {
+    "id": "3",
+    "marca": "Nike",
+    "modelo": "Crater",
+    "color": "Negro",
+    "precio": "38000",
+    "img": "./assets/img/shoes/crater.png"
+  },
+  {
+    "id": "4",
+    "marca": "Nike",
+    "modelo": "Hippie",
+    "color": "Blanco",
+    "precio": "12000",
+    "img": "./assets/img/shoes/hippie.png"
+  },
+  {
+    "id": "5",
+    "marca": "Nike",
+    "modelo": "Jordan",
+    "color": "Blanco",
+    "precio": "70000",
+    "img": "./assets/img/shoes/jordan.png"
+  }
+]
