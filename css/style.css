@@ -50,16 +50,10 @@ body {
 .cardShoe:hover {
   box-shadow: 1px 8px 20px grey;
   -webkit-transition: box-shadow 0.3s ease-in;
+          transition: box-shadow 0.3s ease-in;
 }
 
-.containerr{
-  width: 100%;
-  heigth: 100vh;
-  background: #3c5077;
-  display: flex;
-  align-items:center;
-  justify-content:center;
-}
+
 .popup{
   width:400px;
     background:#fff;
@@ -90,7 +84,7 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
 .popup h2 {
   font-size: 38px;
-  font-weigth: 500;
+  font-weight: 500;
   margin: 30px 0 10px;
 }
 

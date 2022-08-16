@@ -155,11 +155,16 @@ let popup = document.getElementById("popup");
   function closePopup() {
     popup.classList.remove("open-popup");
   }
-  /* const btnComprar = document.getElementById("comprar-carrito");
+  const btnComprar = document.getElementById("comprar-carrito");
   btnComprar.addEventListener("click", () => {
     carrito = {};
   pintarCarrito();
-  }); */
+  openPopup();
+  }); 
+  const btnAceptar = document.getElementById("btn-aceptar");
+  btnAceptar.addEventListener("click", () => {
+   closePopup();
+  }); 
 };
 
 const btnAccion = (e) => {
