@@ -15,14 +15,17 @@
 <body>
   <!-- NavBar -->
 
+
+
   <ul id="dropdown1" class="dropdown-content">
     <div class="container">
       <h4>Carrito de compras</h4>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <!-- <th scope="col">Img</th> -->
             <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Acción</th>
             <th scope="col">Total</th>
@@ -45,13 +48,17 @@
       <button class="#f44336 red btn btn-danger btn-sm" id="vaciar-carrito">
         Vaciar
       </button>
+      <button type="submit" class="##76ff03 light-green accent-3  btn btn-danger btn-sm" >
+        Comprar!
+      </button>
     </td>
     <td class="font-weight-bold">$ <span>5000</span></td>
   </template>
 
   <template id="template-carrito">
     <tr>
-      <th scope="row">id</th>
+      <!-- <th scope="row"><img style="width: 100px; height: 100px;" ></th> -->
+      <th>imagen</th>
       <td>Café</td>
       <td>1</td>
       <td>
@@ -64,6 +71,7 @@
 
   <nav class="#263238 blue-grey darken-4" role="navigation">
     <div class="nav-wrapper container">
+      
       <a id="logo-container" href="./index.html" class="brand-logo"><img src="./assets/img/logo.png" alt=""
           class="logoImg" /><i class="text-logo">ZapatiYa!</i>
       </a>
@@ -71,20 +79,36 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
       <ul class="right hide-on-med-and-down">
+        <li>
+          <div class="input-field #37474f blue-grey darken-3">
+            <input id="search" type="search" class="searchInput" data-search required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </li>
         <li><a href="./index.html">Inicio</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="./login.html">Login</a></li>
         <li>
           <a href="#" class='dropdown-trigger btn' href='#' data-target='dropdown1'><i id="checkout" class="material-icons">shopping_cart</i></a>
         </li>
+        
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
+
         <li><a href="./index.html">Inicio</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="./login.html">Login</a></li>
         <li>
           <a href="#" class='dropdown-trigger btn' href='#' data-target='dropdown1'><i class="material-icons">shopping_cart</i></a>
+        </li>
+        <li>
+            <div class="input-field teal lighten-2">
+              <input id="search" type="search" class="searchInput" data-search required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
         </li>
       </ul>
     </div>
@@ -111,6 +135,17 @@
       </div>
     </div>
   </template>
+
+  <!-- <div class="containerr">
+    <button type="submit"class="btn" oneclick="openPopup()">Submit</button>
+    <div class="popup" id="popup">
+       <img src="./assets/img/tick.png">
+       <h2>Gracias por tu compra!</h2>
+       <p>Recibiras la factura y los datos del envio por E-mail.</p>
+       <button type="button" oneclick="closePopup()">Aceptar</button>
+    </div>
+  </div> -->
+
 
   <a class='dropdown-trigger btn none' href='#' data-target='dropdown1'>Carrito</a>
   <!-- Footer -->
@@ -139,6 +174,16 @@
   <!-- Fin del Footer -->
 
   <!--  Scripts-->
+  <!-- <script>
+     let popup = document.getElementById("popup");
+
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+function closePopup() {
+  popup.classList.remove("open-popup");
+}
+  </script> -->
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="./js/app.js" type="module"></script>
